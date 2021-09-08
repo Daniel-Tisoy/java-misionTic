@@ -1,0 +1,75 @@
+package bicicletas;
+
+public class Bicicleta {
+	// atributos
+	private String marca;
+	private String color;
+	private double velocidad;
+	private String pedales;
+
+	// constructor
+	public Bicicleta() {
+		this.marca = "GW";
+		this.color = "gris";
+		this.velocidad = 0;
+		this.pedales = "Shimano";
+	}
+
+	public Bicicleta(String marca, String color, double velocidad, String pedales) {
+		this.marca = marca;
+		this.color = color;
+		this.velocidad = velocidad;
+		this.pedales = pedales;
+	}
+
+	// métodos
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String nuevaMarca) {
+		this.marca = nuevaMarca;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public double getVelocidad() {
+		return velocidad;
+	}
+
+	public String getPedales() {
+		return pedales;
+	}
+
+	public void setPedales(String pedales) {
+		this.pedales = pedales;
+	}
+
+	public void pedalear(double aceleracion) {
+		this.velocidad = this.velocidad + aceleracion;
+	}
+
+	public void frenar(String all) {
+		if (all == "freno total")
+			this.velocidad = 0;
+		else
+			System.out.println("?");
+	}
+
+	public void frenar() {
+		if (this.velocidad > 0) {
+			this.velocidad--;
+		}
+	}
+
+	public String getDescripcion() {
+		return "Soy una bicicleta de marca " + marca + ", con color " + color + ", a velocidad " + velocidad
+				+ " y con pedales " + pedales;
+	}
+}
